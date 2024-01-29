@@ -1,2 +1,2 @@
-# mathieudpnt.github.io
+# mathieudupont.github.io
 Mon CV pro sur Github
