@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
+
 <!-- partial:index.partial.html -->
 <head>
   <title>Curriculum vitae</title>
@@ -21,23 +21,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
 
   <!-- Add the JavaScript libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
   <!-- Add your custom JavaScript for PDF generation -->
   <script>
     function downloadPDF() {
-      const pdf = new jsPDF();
-      pdf.html(document.body, {
-        callback: function () {
-          pdf.save('resume.pdf');
-        }
-      });
+      var opt = {
+        margin:       1,
+        filename:     'test_resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(document.body).save()
+      html2pdf(document.body, opt);
     }
   </script>
-</head>
-<body>
+
+
     <div class="cv-container">
       <div class="left-column">
         <img class="portait" src="img/profile_pic.JPG" alt="">
@@ -163,7 +167,7 @@
 
         <footer>
           <br>
-          <p><a class="btn" href="#" onclick="downloadPDF()" title="Download my CV as PDF">Download my CV as PDF</a></p>
+          <p><a class="btn" href="#" onclick="downloadPDF()">Download my CV as PDF</a></p>
         </footer>
         
         
