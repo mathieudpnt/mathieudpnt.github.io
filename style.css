@@ -229,12 +229,15 @@ footer {
     width: 210mm;
     height: 297mm;
     margin: 0;
-    font-size: 12px; /* Adjust font size for printing */
+    font-size: 10px; /* Adjust font size for printing */
+    overflow: hidden; /* Hide overflow content to prevent margins */
   }
 
   .cv-container {
     display: block;
-    padding: 20px; /* Adjust padding for printing */
+    padding: 0; /* Remove padding for printing */
+    margin: 0; /* Remove margins for printing */
+    page-break-before: always; /* Ensure content starts on a new page */
   }
 
   .left-column, .right-column {

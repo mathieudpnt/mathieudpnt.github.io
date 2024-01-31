@@ -154,15 +154,15 @@
   <!-- Custom JavaScript for PDF generation -->
   <script>
     function downloadPDF() {
-      var opt = {
-        margin: 0,
-        filename: 'Mathieu_Dupont_resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 1 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(document.getElementById('pdf-content')).save();
-    }
+  var opt = {
+    margin: 0, // Set margins to 0
+    filename: 'Mathieu_Dupont_resume.pdf',
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: { scale: 2, logging: true, width: 2100, height: 2970 }, // Increase canvas size for better quality
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(opt).from(document.getElementById('pdf-content')).save();
+  }
   </script>
 </body>
 </html>
