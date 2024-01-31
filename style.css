@@ -240,9 +240,15 @@ footer {
     page-break-before: always; /* Ensure content starts on a new page */
   }
 
-  .left-column, .right-column {
+  .left-column{
     float: none;
-    width: auto;
+    width: 40;
+    margin-right: 0;
+  }
+
+  .right-column {
+    float: none;
+    width: 170;
     margin-right: 0;
   }
 
