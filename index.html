@@ -31,13 +31,11 @@
     function downloadPDF() {
       var opt = {
         margin:       1,
-        filename:     'test_resume.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        filename:     'Mathieu_Dupont_resume.pdf',
+        html2canvas:  { scale: 1 },
+        jsPDF:        { unit: 'cm', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(document.body).save()
-      html2pdf(document.body, opt);
     }
   </script>
 
