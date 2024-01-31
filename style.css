@@ -233,7 +233,7 @@ footer {
   }
 
   .cv-container {
-    display: block;
+    display: grid;
     padding: 0; /* Remove padding for printing */
     margin: 0; /* Remove margins for printing */
   }
